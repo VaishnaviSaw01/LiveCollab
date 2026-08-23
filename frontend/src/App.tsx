@@ -42,7 +42,7 @@ function Home() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/LiveCollab">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/room/:roomId" element={<Room />} />
