@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Editor, { useMonaco } from '@monaco-editor/react';
 import * as Y from 'yjs';
@@ -16,7 +16,7 @@ export default function Room() {
   const monaco = useMonaco();
   
   const [presenceList, setPresenceList] = useState<any[]>([]);
-  const [latency, setLatency] = useState<number>(0);
+  const [latency] = useState<number>(0);
 
   useEffect(() => {
     if (!editorRef.current || !monaco || !roomId) return;
@@ -69,7 +69,7 @@ export default function Room() {
     };
   }, [monaco, roomId]);
 
-  const handleEditorDidMount = (editor: any, monacoInstance: any) => {
+  const handleEditorDidMount = (editor: any) => {
     editorRef.current = editor;
   };
 
